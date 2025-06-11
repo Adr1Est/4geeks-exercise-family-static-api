@@ -46,14 +46,15 @@ class FamilyStructure:
                   }
         self._members.append(new_member)
         print(new_member)
+        return new_member
 
     def delete_member(self, id):
         for member in self._members:
             if member["id"] == id:
                 deleted_member = member
                 self._members.remove(member)
-                return deleted_member
-        return 'Familiar no encontrado'
+                return {"done": True}
+        return {"done": False}
 
     def get_member(self, id):
         for member in self._members:

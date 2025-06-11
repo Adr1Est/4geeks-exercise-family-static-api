@@ -50,8 +50,8 @@ def delete_member_by_id(id):
 @app.route('/members', methods=['POST'])
 def add_new_member():
     request_body = request.json
-    jackson_family.add_member(request_body)
-    return jsonify(request_body), 200
+    new_member = jackson_family.add_member(request_body)
+    return jsonify(new_member), 200
 
 # This only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':
